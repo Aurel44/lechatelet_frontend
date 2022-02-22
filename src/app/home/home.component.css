@@ -1,0 +1,16 @@
+.container {
+    width: 600px;
+    padding: 100px;
+    
+  }
+.card-container{
+    padding : 10px;
+    background-color: rgb(144,238,144,0.8);
+}
+.btn {
+    margin: 0 auto;
+  }
+  .btn-class {
+    display: flex;
+    justify-content: center;
+  }

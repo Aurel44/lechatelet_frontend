@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="card card-container">
+        <form class="form-signin" (ngSubmit)="registerUser()" #registerForm="ngForm">
+            <input type="text" id="uname" class="form-control" name="uname" #uname="ngModel"
+                [(ngModel)]="userObject.uname" placeholder="Utilisateur" title="Please enter the username"
+                autocomplete="off" required autofocus>
+            <input type="password" id="upass" class="form-control" name="upass" placeholder="Mot de passe"
+                title="Please enter the password" #upass="ngModel" autocomplete="off" [(ngModel)]="userObject.upass"
+                required>
+            <input type="password" id="confirmpass" class="form-control" name="confirmpass"
+                placeholder="Confirmer le mot de passe" title="Please re-enter the password" #uconfirmpass="ngModel"
+                autocomplete="off" [(ngModel)]="confirmPass" required>
+            <div class="btn-class">
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit"
+                    [disabled]="(uname?.errors?.['required'] || upass?.errors?.['required'] || uconfirmpass?.errors?.['required']) || (upass.value !== uconfirmpass.value)">Sign
+                    up
+                </button>
+            </div>
+            <p style="text-align:center;">Identifiants en votre possession? <a [routerLink]="['/login']">Se connecter</a></p>
+            <p class="text-success" style="text-align:center;" *ngIf="errorMessage">{{errorMessage}}</p>
+        </form>
+    </div>
+</div>
